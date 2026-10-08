@@ -60,6 +60,16 @@ add_code("""# 3. Download Models (Fast Downloads via aria2)
 
 # Download VAE
 !aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.safetensors -d models/vae -o ae.safetensors
+
+# Download IP-Adapter Models
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors -d models/ipadapter -o ip-adapter-plus_sdxl_vit-h.safetensors
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/comfyanonymous/clip_vision_g/resolve/main/clip_vision_g.safetensors -d models/clip_vision -o clip_vision_g.safetensors
+""")
+
+add_code("""# 3.5 Install IP-Adapter Custom Node
+%cd custom_nodes
+!git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+%cd /content/ComfyUI
 """)
 
 add_code("""# 4. Start ComfyUI and expose it via Native Colab Proxy
