@@ -10,7 +10,7 @@ This repository completely bypasses expensive local GPU hardware by utilizing Go
 
 By leveraging the heavily optimized `zimageTurboByStable_xmasQ8.gguf` UNet paired with a 4-bit quantized text encoder, this pipeline achieves generation speeds that normally require an RTX 4090—completely for free on a Google Colab T4 GPU.
 
-![Generation Speed Showcase](gen_img/speed_showcase.png)
+![Generation Speed Showcase](gen%20img/speed_showcase.png)
 *(Image generation takes mere seconds from prompt to final 8K rendering)*
 
 ---
